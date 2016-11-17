@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.startAlarmButton)
     public void startAlarm(View v){
-
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         Intent intent = new Intent(MainActivity.this, AlarmReceiver.class);
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             mHandler.removeCallbacks(mUpdateTimeTask);
             mHandler.postDelayed(mUpdateTimeTask, 100);
         }
-
     }
 
     @OnClick(R.id.stopAlarmButton)
@@ -96,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe
     public void stopTimer(TimerStopEvent event){
         mHandler.removeCallbacks(mUpdateTimeTask);
+        mStartTime = 0L;
     }
 
 }

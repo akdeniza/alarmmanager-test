@@ -5,4 +5,10 @@ package com.sensorberg.alarmmangertest.event;
  */
 
 public class TimerStopEvent {
+
+    private boolean running;
+
+    public TimerStopEvent(boolean running){
+        this.running = running;
+    }
 }

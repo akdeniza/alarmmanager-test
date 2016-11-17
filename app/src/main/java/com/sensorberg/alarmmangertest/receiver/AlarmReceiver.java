@@ -21,7 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver{
 
         Toast.makeText(context, "Delayed notification", Toast.LENGTH_LONG).show();
 
-        EventBus.getDefault().post(new TimerStopEvent());
+        EventBus.getDefault().post(new TimerStopEvent(false));
 
 
     }
